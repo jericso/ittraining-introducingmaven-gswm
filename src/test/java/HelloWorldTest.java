@@ -17,7 +17,7 @@ public class HelloWorldTest {
     public void testSayHello() {
         HelloWorld hw = new HelloWorld();
         hw.sayHello();
-        Assertions.assertEquals("Hello World", outStream.toString());
+        Assertions.assertEquals("Hello World.", outStream.toString());
     }
 
     @AfterEach
