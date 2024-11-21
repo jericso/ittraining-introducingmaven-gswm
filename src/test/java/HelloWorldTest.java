@@ -1,14 +1,14 @@
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class HelloWorldTest {
     private final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 
-    @Before
+    @BeforeEach
     public void setUp() {
         System.setOut(new PrintStream(outStream));
     }
@@ -17,10 +17,10 @@ public class HelloWorldTest {
     public void testSayHello() {
         HelloWorld hw = new HelloWorld();
         hw.sayHello();
-        Assert.assertEquals("Hello World", outStream.toString());
+        Assertions.assertEquals("Hello World", outStream.toString());
     }
 
-    @After
+    @AfterEach
     public void cleanUp() {
         System.setOut(null);
     }
